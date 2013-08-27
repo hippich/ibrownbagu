@@ -21,6 +21,7 @@ if (Meteor.isClient) {
         var from   = $('.from').val();
         var to     = $('.to').val();
         var reason = $('.reason').val();
+        $('form')[0].reset();
 
         Bags.insert({
             date: Date.now(),
