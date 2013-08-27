@@ -1,0 +1,44 @@
+<head>
+  <title>br</title>
+</head>
+
+<body>
+  <div style="width: 400px; margin: 0 auto;">
+      {{> bagsomeone}}
+      {{> latestbags}}
+  </div>
+</body>
+
+<template name="latestbags">
+<hr style="margin-top: 1em;"/>
+<h3 style="margin-top: 1em;">Last brownbags:</h3>
+{{#each latestbags}}
+  <div class="bag-row">
+    On {{formatDate date}},<br> <strong>{{from}}</strong> brownbagged <strong>{{to}}</strong> for:
+    <p><blockquote>{{reason}}</blockquote></p>
+  </div>
+{{/each}}
+</template>
+
+<template name="bagsomeone">
+<form>
+  <fieldset>
+    <legend>Brown Bag Someone:</legend>
+    <div class="control-group">
+      <label>From:</label>
+      <input type="text" placeholder="Ben Paulsen" class="from" required>
+    </div>
+    <div class="control-group">
+      <label>To:</label>
+      <input type="text" placeholder="Rob Linton" class="to" required>
+    </div>
+    <div class="control-group">
+      <label>Reason:</label>
+      <textarea rows="3" class="reason" required></textarea>
+    </div>
+    <div class="control-group">
+      <button class="btn btn-large btn-primary"><i class="icon-tag"></i> Submit</button>
+    </div>
+  </fieldset>
+</form>
+</template>
